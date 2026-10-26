@@ -1,27 +1,22 @@
 name: 刷课
- 
-on: 
+on:
   push:
     branches: [ main ]
-  
 
-    
-jobs: 
+jobs:
   Start:
-    runs-on: ubuntu-latest # 在最新版本的 Ubuntu 操作系统环境下运行
-    steps: # 要执行的步骤
+    runs-on: ubuntu-latest
+    steps:
       - name: 拷贝代码
-        uses: actions/checkout@v3  # 用于将github代码仓库的代码拷贝到工作目录中
- 
+        uses: actions/checkout@v3
+
       - name: 设置python环境
-        uses: actions/setup-python@v2 # 用于设置 Python 环境，它允许你指定要在工作环境中使用的 Python 版本
+        uses: actions/setup-python@v2
         with:
-          python-version: '3.10'  # 选择要用的Python版本
- 
+          python-version: '3.10'
+
       - name: 安装依赖包
-        run: | # 安装依赖包
-          pip install httpx 
-          
-      
+        run: pip install httpx urllib3
+
       - name: Run main.py
-        run: python main.py -u 17303757921 -p 20070128xX -l 265891345 #课程id，默认为心理课的
+        run: python main.py -u 17303757921 -p 20070128xX -l 265891345
