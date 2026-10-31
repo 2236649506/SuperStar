@@ -13,7 +13,7 @@ jobs:
       - name: 设置python环境
         uses: actions/setup-python@v2
         with:
-          python-version: '3.14.10'
+          python-version: '3.12'
 
       - name: 安装依赖包
         run: pip install httpx urllib3
